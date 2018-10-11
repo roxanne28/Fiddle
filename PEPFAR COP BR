@@ -1,0 +1,46 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div id="container" style="min-width: 310px; max-width: 600px; height: 600px; margin: 0 auto"></div>
+
+// JavaScript
+// No-Library (pure JS)
+// On Load
+// i.e data-type=""
+
+Highcharts.chart('container', {
+   chart: {
+      type: 'column'
+   },
+   title: {
+      text: '2018 COP amount vs. 2018 PEPFAR budget request'
+   },
+   subtitle: {
+      text: 'Difference between COP and budget request as a percent of the budget request'
+   },
+   data: {
+      googleSpreadsheetKey: '1jMl_0_jZFXEdDM2Z2JXBlgZL4e_shed0phqkmSF52Y4' ,
+      googleSpreadsheetWorksheet: '1' ,
+   },
+   yAxis: {
+      // set max & min of y-axis
+      min: -30, 
+      max: 100,
+      // create a title for the y-axis
+      title: {
+         text: '%'
+      }
+   },
+   xAxis: {
+      // show a see through box for each country once hovered over
+      crosshair: true
+   },
+   tooltip: {
+   		headerFormat: '<span style="font-size:12px">{point.key}</span><table>',
+      pointFormat:  '<tr><td style="color:{series.color};padding:0">{series.name}: <b>{point.y:.1f}</b></td></tr>',
+      shared: true,
+      useHTML: true
+   },
+   //COP amount excluding applied funding
+   //COP amount including applied funding
+});
