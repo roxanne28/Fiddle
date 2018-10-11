@@ -36,8 +36,8 @@ Highcharts.chart('container', {
       crosshair: true
    },
    tooltip: {
-   		headerFormat: '<span style="font-size:12px">{point.key}</span><table>',
-      pointFormat:  '<tr><td style="color:{series.color};padding:0">{series.name}: <b>{point.y:.1f}</b></td></tr>',
+      headerFormat: '<span style="font-size:12px">{point.key}</span><table>',
+      pointFormat:  '<tr><td style="color:{series.color};"> {point.y:.1f}% difference from budget request </td></tr>',
       shared: true,
       useHTML: true
    },
